@@ -1,6 +1,19 @@
 // service-worker.js
 self.addEventListener("install", function(e) {
     console.log("[ServiceWorker] Install");
+    e.waitUntil(
+        caches.open("airhorner").then((cache) => {
+            return cache.addAll([
+                "/",
+                "/index.html",
+                "/index.html?utm_source=homescreen",
+                "/?utm_source=homescreen",
+                "/icon-192.png",
+                "/icon-256.png",
+                "/pwa.js"
+            ]);
+        })
+    );
 });
 
 self.addEventListener("activate", function(e) {
