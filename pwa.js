@@ -41,7 +41,7 @@ Notification.requestPermission().then(function(permissions) {
 //     });
 // });
 
-function show_sapmle_notification() {
+function show_sample_notification() {
     const notification = new Notification("Thanks!", {
         body: "Thenk you for apply of notification!",
         icon: "./icon-192.png",
