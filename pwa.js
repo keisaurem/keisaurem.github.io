@@ -6,22 +6,22 @@ if ("serviceWorker" in navigator) {
 
 Notification.requestPermission().then(function(permissions) {
     if (permissions === "granted") {
-        show_sample_notification();
+        // show_sample_notification();
     }
-    // switch (permissions) {
-    //     case "granted":
-    //         // 許可された場合
-    //         show_sample_notification();
-    //         break;
-    //     case "denied":
-    //         // ブロックされた場合
-    //         break;
-    //     case "default":
-    //         // 無視された場合
-    //         break;
-    //     default:
-    //         break;
-    // }
+    switch (permissions) {
+        case "granted":
+            // 許可された場合
+            // show_sample_notification();
+            break;
+        case "denied":
+            // ブロックされた場合
+            break;
+        case "default":
+            // 無視された場合
+            break;
+        default:
+            break;
+    }
 });
 
 // navigator.serviceWorker.ready.then(function(registration) {
@@ -41,15 +41,15 @@ Notification.requestPermission().then(function(permissions) {
 //     });
 // });
 
-function show_sample_notification() {
-    const notification = new Notification("Thanks!", {
-        body: "Thenk you for apply of notification!",
-        icon: "./icon-192.png",
-        data: {
-            hoge: "hoge"
-        }
-    });
-}
+// function show_sample_notification() {
+//     const notification = new Notification("Thanks!", {
+//         body: "Thenk you for apply of notification!",
+//         icon: "./icon-192.png",
+//         data: {
+//             hoge: "hoge"
+//         }
+//     });
+// }
 
 function encodeBase64URL(buffer) {
     return btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)))
