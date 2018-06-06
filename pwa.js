@@ -43,7 +43,7 @@ Notification.requestPermission().then(function(permissions) {
 
 function show_sapmle_notification() {
     const notification = new Notification("Thanks!", {
-        body: "Thenk you for application of notification!",
+        body: "Thenk you for apply of notification!",
         icon: "./icon-192.png",
         data: {
             hoge: "hoge"
