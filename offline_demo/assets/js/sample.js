@@ -3,13 +3,13 @@ if ("serviceWorker" in navigator) {
         scope: "./"
     };
 
-    navigator.serviceWorker.register("./service-worker.js", options).then(() => {
+    navigator.serviceWorker.register("/offline_demo/sw.js", options).then(() => {
         console.log("Registerd Service worker");
     });
 }
 
 function onClickRequest () {
-    request("takashi.json", {data: "data"}, 
+    request("/static_datas/sample.json", {data: "data"}, 
         (data) => {
             console.dir(data);
         },
