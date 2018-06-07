@@ -43,8 +43,9 @@ self.addEventListener("fetch", (event) => {
         console.log("Response from cache!");
         let res = caches.match(event.request, {
             cacheName: CACHE_NAME
-        }).then((c) => {
-            console.dir(c);
+        });
+        res.then((cache) => {
+            console.dir(cache);
         });
         event.respondWith(res);
     }
