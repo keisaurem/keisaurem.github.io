@@ -21,9 +21,6 @@ Notification.requestPermission().then(function(permissions) {
 });
 
 // alert(window.Notification);
-let elm = document.createElement("p");
-elm.innerHTML = window.Notification ? "A" : "B";
-document.getElementById("hoge").appendChild(elm);
 
 function onClickNotification(){
 

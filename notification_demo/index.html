@@ -15,6 +15,11 @@
 
     </ul>
     <div id="hoge"></div>
+    <script type="text/javascript">
+        let elm = document.createElement("p");
+        elm.innerHTML = window.Notification ? "A" : "B";
+        document.getElementById("hoge").appendChild(elm);
+    </script>
 </body>
 
 </html>
