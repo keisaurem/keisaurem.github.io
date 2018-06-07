@@ -1,5 +1,5 @@
 const STATIC_FILES = [
-    // "/static_datas/sample.json"
+    "/static_datas/sample.json"
 ];
 const CACHE_NAME = "sample";
 
@@ -38,7 +38,13 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
     // ネットワークリクエストの傍受
-    console.dir(event.request);
+    if (STATIC_FILES.includes(event.request.url)) {
+        console.log("Response from cache!");
+        event.respondWith(caches.match(event.request, {
+            cacheName: CACHE_NAME
+        }));
+    }
+    // console.dir(event.request);
     // if (event.request.url.indexOf("takashi") > -1) {
     //     event.respondWith(new Response("koyubi"));
     // }
