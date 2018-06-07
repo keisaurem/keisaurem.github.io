@@ -1,6 +1,7 @@
 self.addEventListener("fetch", (event) => {
     // ネットワークリクエストの傍受
     console.dir(event.request);
-    console.dir(event.request.url);
-    event.respondWith(new Response("hogehoge"));
+    if (evvent.request.url.indexOf("takashi") > -1) {
+        event.respondWith(new Response("koyubi"));
+    }
 });
