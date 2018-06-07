@@ -44,8 +44,8 @@ self.addEventListener("fetch", (event) => {
         let res = caches.match(event.request, {
             cacheName: CACHE_NAME
         });
-        res.then((cache) => {
-            console.dir(cache);
+        res.then((tmp_response) => {
+            console.dir(tmp_response.json());
         });
         event.respondWith(res);
     }

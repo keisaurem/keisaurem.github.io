@@ -11,6 +11,7 @@ if ("serviceWorker" in navigator) {
 function onClickRequest () {
     request("/static_datas/sample.json", {data: "data"}, 
         (data) => {
+            data = JSON.parse(data);
             console.log("receve response");
             console.dir(data);
             let elm = document.createElement("li");
