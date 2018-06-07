@@ -45,7 +45,9 @@ self.addEventListener("fetch", (event) => {
             cacheName: CACHE_NAME
         });
         res.then((tmp_response) => {
-            console.dir(tmp_response.json());
+            tmp_response.json().then((jd) => {
+                console.dir(jd);
+            });
         });
         event.respondWith(res);
     }
