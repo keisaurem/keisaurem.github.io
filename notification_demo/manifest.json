@@ -3,12 +3,12 @@
     "short_name": "PWAOFF",
     "icons": [
         {
-            "src": "assets/img/icon-256.png",
+            "src": "/notification_demo/assets/img/icon-256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "assets/img/icon-192.png",
+            "src": "/notification_demo/assets/img/icon-192.png",
             "sizes": "192x192",
             "type": "image/png"
         }
