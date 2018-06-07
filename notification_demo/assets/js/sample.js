@@ -25,7 +25,7 @@ function onClickNotification(){
 
     const notification = new Notification("Thanks!", {
         body: "Notification!",
-        icon: "./assets/icon-192.png",
+        icon: "/notification_demo/assets/icon-192.png",
         tag: "notification"
     });
 
