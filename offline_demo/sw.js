@@ -58,6 +58,14 @@ self.addEventListener("fetch", (event) => {
                 console.log("response from server");
                 return response;
             }
+        }).catch(() => {
+            // 上手くいかなかったらキャッシュから
+            caches.match(event.request, {cacheName: CACHE_NAME}, (cache) => {
+                if (cache) {
+                    console.log("response from ws");
+                    return cache;
+                }
+            });
         })
     );
     
