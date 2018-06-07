@@ -24,7 +24,10 @@ if (!window.Notification) {
     alert("未対応");
 }
 
-alert(window.Notification);
+// alert(window.Notification);
+let elm = document.createElement("p");
+elm.innerHTML = window.Notification ? "A" : "B";
+document.getElementsByTagName("body")[0].appendChild(elm);
 
 function onClickNotification(){
 
