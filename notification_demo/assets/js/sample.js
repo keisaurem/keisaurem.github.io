@@ -20,6 +20,10 @@ Notification.requestPermission().then(function(permissions) {
     }
 });
 
+if (!window.Notification) {
+    alert("未対応");
+}
+
 
 function onClickNotification(){
 
