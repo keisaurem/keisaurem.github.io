@@ -24,6 +24,7 @@ if (!window.Notification) {
     alert("未対応");
 }
 
+alert(window.Notification);
 
 function onClickNotification(){
 
