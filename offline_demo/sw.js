@@ -41,9 +41,11 @@ self.addEventListener("fetch", (event) => {
     console.log(event.request.url);
     if (event.request.url.indexOf("static_datas") > -1) {
         console.log("Response from cache!");
-        event.respondWith(caches.match(event.request, {
+        let res = caches.match(event.request, {
             cacheName: CACHE_NAME
-        }));
+        });
+        console.dir(res);
+        event.respondWith(res);
     }
     // console.dir(event.request);
     // if (event.request.url.indexOf("takashi") > -1) {
