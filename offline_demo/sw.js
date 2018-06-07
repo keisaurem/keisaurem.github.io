@@ -43,12 +43,9 @@ self.addEventListener("fetch", (event) => {
         console.log("Response from cache!");
         let res = caches.match(event.request, {
             cacheName: CACHE_NAME
+        }).then((c) => {
+            console.dir(c);
         });
-        console.dir(res);
         event.respondWith(res);
     }
-    // console.dir(event.request);
-    // if (event.request.url.indexOf("takashi") > -1) {
-    //     event.respondWith(new Response("koyubi"));
-    // }
 });

@@ -11,9 +11,10 @@ if ("serviceWorker" in navigator) {
 function onClickRequest () {
     request("/static_datas/sample.json", {data: "data"}, 
         (data) => {
+            console.log("receve response");
             console.dir(data);
             let elm = document.createElement("li");
-            elm.innerHTML = data.title;
+            elm.innerHTML = data["title"];
             document.getElementById("messagelist").appendChild(elm);
         },
         (xhr) => {
