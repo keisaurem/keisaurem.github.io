@@ -39,7 +39,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
     // ネットワークリクエストの傍受
     event.respondWith(
-        fetch(evnet.request).then((response) => {
+        fetch(event.request).then((response) => {
             if (!response || response.status !== 200 || response.type !== "basic") {
                 // 上手くいかなかったらキャッシュから
                 caches.match(event.request, {cacheName: CACHE_NAME}, (cache) => {
