@@ -39,7 +39,7 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
     // ネットワークリクエストの傍受
     console.log(event.request.url);
-    if (STATIC_FILES.includes(event.request.url)) {
+    if (event.request.url.indexOf("static_datas") > -1) {
         console.log("Response from cache!");
         event.respondWith(caches.match(event.request, {
             cacheName: CACHE_NAME
