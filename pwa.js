@@ -9,7 +9,7 @@ if ("serviceWorker" in navigator) {
 }
 
 function onClickRequest () {
-    request("./", {data: "data"}, 
+    request("takashi.json", {data: "data"}, 
         (data) => {
             console.dir(data);
         },
