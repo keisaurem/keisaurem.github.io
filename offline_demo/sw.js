@@ -21,7 +21,7 @@ self.addEventListener("install", (event) => {
     );
 });
 
-self.addEventListener("activate", (evnet) => {
+self.addEventListener("activate", (event) => {
     event.waitUntil(
         caches.keys().then((keys) => {
             let promises = [];
